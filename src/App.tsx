@@ -60,8 +60,8 @@ export default function App() {
     const loadDatasets = async () => {
       try {
         const [faultsRes, usgsRes] = await Promise.all([
-          fetch('/data/myanmar_active_faults.geojson'),
-          fetch('/data/usgs_myanmar_earthquakes.geojson')
+          fetch(import.meta.env.BASE_URL + 'data/myanmar_active_faults.geojson'),
+          fetch(import.meta.env.BASE_URL + 'data/usgs_myanmar_earthquakes.geojson')
         ]);
 
         if (faultsRes.ok) {

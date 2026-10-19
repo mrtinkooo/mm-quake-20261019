@@ -32,7 +32,7 @@ export const DMHBulletinCard: React.FC<DMHBulletinCardProps> = ({
   }, [quake.latitude, quake.longitude, faults]);
 
   const handleDownloadQuakeGeoJSON = () => {
-    fetch('/data/extracted_dmh_quake.geojson')
+    fetch(import.meta.env.BASE_URL + 'data/extracted_dmh_quake.geojson')
       .then(res => res.json())
       .then(data => downloadGeoJSON(data, 'DMH_Tedim_Earthquake_20261019.geojson'))
       .catch(() => {

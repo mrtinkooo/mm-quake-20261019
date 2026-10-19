@@ -30,7 +30,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
   };
 
   const handleDownloadDMH = () => {
-    fetch('/data/extracted_dmh_quake.geojson')
+    fetch(import.meta.env.BASE_URL + 'data/extracted_dmh_quake.geojson')
       .then(res => res.json())
       .then(data => downloadGeoJSON(data, 'Extracted_DMH_Tedim_Quake.geojson'))
       .catch(() => {

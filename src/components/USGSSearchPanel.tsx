@@ -64,7 +64,7 @@ export const USGSSearchPanel: React.FC<USGSSearchPanelProps> = ({
     setApiError(null);
     setTimeWindow('all');
     try {
-      const resp = await fetch('/data/usgs_myanmar_earthquakes.geojson');
+      const resp = await fetch(import.meta.env.BASE_URL + 'data/usgs_myanmar_earthquakes.geojson');
       const data: USGSGeoJSON = await resp.json();
       onUpdateUSGSData(data);
     } catch (err: any) {
