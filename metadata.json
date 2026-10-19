@@ -1,0 +1,6 @@
+{
+  "name": "Myanmar Seismic & Active Faults Explorer",
+  "description": "Interactive geospatial visualization of Myanmar earthquake events and active fault lines from GEM Global Active Faults Database and USGS seismic records, featuring the Tedim DMH earthquake analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "name": "Myanmar_DMH_Extracted_Earthquake_Tedim",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "DMH_20261019_TEDIM",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.52,
+          23.38,
+          12.0
+        ]
+      },
+      "properties": {
+        "source": "Department of Meteorology and Hydrology (DMH), Nay Pyi Taw, Seismological Division",
+        "event_id": "DMH-2026-10-19-125941",
+        "date_string": "19.10.2026",
+        "time_mst": "12:59:41",
+        "time_utc": "2026-10-19T06:29:41Z",
+        "timestamp": 1792400981000,
+        "magnitude": 3.7,
+        "magnitude_classification": "Slight",
+        "latitude": 23.38,
+        "longitude": 93.52,
+        "depth_km": 12.0,
+        "region": "About (9) miles west of Tedim",
+        "township": "Tedim",
+        "state_region": "Chin State",
+        "country": "Myanmar",
+        "contact_phone": "067-3411269",
+        "contact_fax": "067-3411253",
+        "official_url": "https://www.moezala.gov.mm/",
+        "tectonic_setting": "Indo-Burman Ranges / Indo-Burma Accretionary Wedge",
+        "extracted_from": "mm_quake.jpg"
+      }
+    }
+  ]
+}

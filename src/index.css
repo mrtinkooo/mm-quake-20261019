@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Leaflet dark theme customizations & seismic pulse */
+.leaflet-container {
+  font-family: inherit;
+  background-color: #020617;
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(8px);
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(244, 63, 94, 0.3) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Custom seismic epicenter pulse */
+@keyframes seismic-ripple {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.seismic-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 50%;
+  border: 2px solid #ef4444;
+  animation: seismic-ripple 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.seismic-pulse-ring-delayed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 50%;
+  border: 2px solid #f97316;
+  animation: seismic-ripple 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite 0.7s;
+  pointer-events: none;
+}
+
