@@ -1,6 +1,16 @@
 import { ActiveFaultFeature } from '../types/seismic';
 
 /**
+ * Resolves data asset paths with base URL support for GitHub Pages
+ */
+export function getDataPath(relativePath: string): string {
+  const base = import.meta.env.BASE_URL || './';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanRel = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
+  return `${cleanBase}${cleanRel}`;
+}
+
+/**
  * Calculates Haversine distance in km between two lat/lon points
  */
 export function haversineDistance(

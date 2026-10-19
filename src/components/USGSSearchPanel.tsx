@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { USGSEarthquakeFeature, USGSGeoJSON } from '../types/seismic';
-import { getDepthColor, downloadGeoJSON } from '../utils/geoUtils';
+import { getDepthColor, downloadGeoJSON, getDataPath } from '../utils/geoUtils';
 import { Search, RefreshCw, Download, Calendar, Filter, MapPin, ChevronRight, AlertCircle } from 'lucide-react';
 
 interface USGSSearchPanelProps {
@@ -64,7 +64,7 @@ export const USGSSearchPanel: React.FC<USGSSearchPanelProps> = ({
     setApiError(null);
     setTimeWindow('all');
     try {
-      const resp = await fetch('/data/usgs_myanmar_earthquakes.geojson');
+      const resp = await fetch(getDataPath('data/usgs_myanmar_earthquakes.geojson'));
       const data: USGSGeoJSON = await resp.json();
       onUpdateUSGSData(data);
     } catch (err: any) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { downloadGeoJSON } from '../utils/geoUtils';
+import { downloadGeoJSON, getDataPath } from '../utils/geoUtils';
 import { ActiveFaultGeoJSON, DMHEarthquakeInfo, USGSGeoJSON } from '../types/seismic';
 import { X, Download, FileJson, Copy, Check, ShieldCheck, Database, Layers } from 'lucide-react';
 
@@ -30,7 +30,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
   };
 
   const handleDownloadDMH = () => {
-    fetch('/data/extracted_dmh_quake.geojson')
+    fetch(getDataPath('data/extracted_dmh_quake.geojson'))
       .then(res => res.json())
       .then(data => downloadGeoJSON(data, 'Extracted_DMH_Tedim_Quake.geojson'))
       .catch(() => {

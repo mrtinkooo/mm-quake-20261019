@@ -13,7 +13,7 @@ import { ExportModal } from './components/ExportModal';
 import { TectonicGuideModal } from './components/TectonicGuideModal';
 import { DMH_TEDIM_QUAKE } from './data/dmhQuakeData';
 import { ActiveFaultFeature, ActiveFaultGeoJSON, BasemapId, USGSEarthquakeFeature, USGSGeoJSON } from './types/seismic';
-import { getDepthColor, getFaultColor } from './utils/geoUtils';
+import { getDepthColor, getFaultColor, getDataPath } from './utils/geoUtils';
 import { 
   Activity, 
   Layers, 
@@ -60,8 +60,8 @@ export default function App() {
     const loadDatasets = async () => {
       try {
         const [faultsRes, usgsRes] = await Promise.all([
-          fetch('/data/myanmar_active_faults.geojson'),
-          fetch('/data/usgs_myanmar_earthquakes.geojson')
+          fetch(getDataPath('data/myanmar_active_faults.geojson')),
+          fetch(getDataPath('data/usgs_myanmar_earthquakes.geojson'))
         ]);
 
         if (faultsRes.ok) {

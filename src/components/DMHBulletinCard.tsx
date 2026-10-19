@@ -1,6 +1,6 @@
 import React from 'react';
 import { DMHEarthquakeInfo, ActiveFaultFeature } from '../types/seismic';
-import { findNearestFault, downloadGeoJSON } from '../utils/geoUtils';
+import { findNearestFault, downloadGeoJSON, getDataPath } from '../utils/geoUtils';
 import { 
   Activity, 
   MapPin, 
@@ -32,7 +32,7 @@ export const DMHBulletinCard: React.FC<DMHBulletinCardProps> = ({
   }, [quake.latitude, quake.longitude, faults]);
 
   const handleDownloadQuakeGeoJSON = () => {
-    fetch('/data/extracted_dmh_quake.geojson')
+    fetch(getDataPath('data/extracted_dmh_quake.geojson'))
       .then(res => res.json())
       .then(data => downloadGeoJSON(data, 'DMH_Tedim_Earthquake_20261019.geojson'))
       .catch(() => {
